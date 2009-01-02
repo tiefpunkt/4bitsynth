@@ -19,6 +19,10 @@
 
 = MIDI Channel Selection =
 
+Each 4-bit Synth module can be assigned their own unique MIDI channel number (1 - 16), or you can have synths share the same channel, which means they will play identical notes and receive the same control messages. The DIP switch with the four switches each corresponds to a binary digit.
+
+When the switch is "ON" it is a binary 1. When it is switch "OFF" (away from ground) it is a binary 0.
+
 ||Binary number || MIDI Channel||
 ||0000  ||1 ||
 ||0001 	||2 ||
