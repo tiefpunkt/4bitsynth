@@ -1,0 +1,3 @@
+This directory contains the MIDI source files of the demos found on the Google Code download page for 4bitsynth. They are released to you under Creative Commons 3.0 license BY-SA.
+
+Copyright 2008 David M. Farler
