@@ -1,0 +1,53 @@
+EESchema (2007-11-29-a)  >> Creation date: 29/12/2008-21:53:11
+
+#Cmp ( order = Reference )
+| C1         22pF        
+| C2         22pF        
+| C3         MIDI Chan. Select
+| D1         DIODE       
+| P1         MIDI IN     
+| P2         AUDIO OUT   
+| P3         Power       
+| P4         AUDIO IN    
+| P5         MIDI IN Alt.
+| R1         5.6k        
+| R10        220         
+| R2         1K          
+| R3         1K          
+| R4         1K          
+| R5         1K          
+| R6         1K          
+| R7         500         
+| R8         500         
+| R9         500         
+| U1         ATMEGA48    
+| U2         PC900       
+| X1         20MHz       
+#End Cmp
+
+#Cmp ( order = Value )
+| 1K           R2        
+| 1K           R3        
+| 1K           R4        
+| 1K           R5        
+| 1K           R6        
+| 20MHz        X1        
+| 220          R10       
+| 22pF         C1        
+| 22pF         C2        
+| 5.6k         R1        
+| 500          R7        
+| 500          R8        
+| 500          R9        
+| ATMEGA48     U1        
+| AUDIO IN     P4        
+| AUDIO OUT    P2        
+| DIODE        D1        
+| MIDI Chan. Select C3        
+| MIDI IN      P1        
+| MIDI IN Alt. P5        
+| PC900        U2        
+| Power        P3        
+#End Cmp
+
+#End List

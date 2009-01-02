@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0  Date: 24/11/2008-12:11:54
+#
+$CMP ATMEGA48
+D 8-bit AVR Microcontroller with 8K Bytes ISP Flash
+K ATMEGA48, Atmel, AVR
+$ENDCMP
+#
+#End Doc Library

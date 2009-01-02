@@ -1,0 +1,192 @@
+Cmp-Mod V01 Created by CVpcb (20080825) date = 24/11/2008-03:07:56
+
+BeginCmp
+TimeStamp = /4926E5B9;
+Reference = C1;
+ValeurCmp = 22pF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E5B0;
+Reference = C2;
+ValeurCmp = 22pF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E658;
+Reference = C3;
+ValeurCmp = 100nF;
+IdModule  = C1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E546;
+Reference = C4;
+ValeurCmp = MIDI_Chan._Select;
+IdModule  = 8DIP-ELL300;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272B21;
+Reference = D1;
+ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E74E;
+Reference = P1;
+ValeurCmp = AVR_ISP;
+IdModule  = pin_array_3x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272CCC;
+Reference = P2;
+ValeurCmp = MIDI_THRU_Alt.;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272C6F;
+Reference = P3;
+ValeurCmp = MIDI_THRU;
+IdModule  = DIN5_PCB;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272ACE;
+Reference = P4;
+ValeurCmp = MIDI_IN;
+IdModule  = DIN5_PCB;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E334;
+Reference = P5;
+ValeurCmp = AUDIO_OUT;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E355;
+Reference = P6;
+ValeurCmp = AUDIO_IN;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272B89;
+Reference = P7;
+ValeurCmp = MIDI_IN_Alt.;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /49273D4D;
+Reference = P8;
+ValeurCmp = Power;
+IdModule  = PIN_ARRAY_2X1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E205;
+Reference = R1;
+ValeurCmp = 1K;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E20C;
+Reference = R2;
+ValeurCmp = 1K;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E214;
+Reference = R3;
+ValeurCmp = 1K;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E218;
+Reference = R4;
+ValeurCmp = 1K;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E2EA;
+Reference = R5;
+ValeurCmp = 1K;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E236;
+Reference = R6;
+ValeurCmp = 500;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E237;
+Reference = R7;
+ValeurCmp = 500;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E238;
+Reference = R8;
+ValeurCmp = 500;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272BDA;
+Reference = R9;
+ValeurCmp = 220;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272AF9;
+Reference = R10;
+ValeurCmp = 220;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E1F1;
+Reference = U1;
+ValeurCmp = ATMEGA48;
+IdModule  = 28dip300;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272C1E;
+Reference = U2;
+ValeurCmp = 74HCT04;
+IdModule  = 14DIP-ELL300;
+EndCmp
+
+BeginCmp
+TimeStamp = /49272A8A;
+Reference = U3;
+ValeurCmp = PC900;
+IdModule  = 6DIP-ELL300;
+EndCmp
+
+BeginCmp
+TimeStamp = /4926E59B;
+Reference = X1;
+ValeurCmp = 20MHz;
+IdModule  = HC-49S;
+EndCmp
+
+EndListe
