@@ -7,6 +7,34 @@ Here are step-by-step instructions for building a 4bit synth, including the sche
 == Schematic ==
 
 http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
+
+== Bill of materials ==
+
+||Component Reference  	||Description||
+||C1||	22pF||
+||C2||	22pF Ceramic Disc Capacitor||
+||C3||	MIDI Chan. Select DIP Switch||
+||C4||	2200uF Capacitor, optional but recommended to have one or two on the board to reduce noise||
+||D1||	1N914 Diode||
+||P1||	MIDI In Female Connector||
+||P2||	Audio Out||
+||P3||	Power (5V)||
+||P4||	Audio In||
+||P5||	MIDI IN Alt. (for sharing one MIDI line)||
+||R1||	5.6k ohm resistor||
+||R10||	220 ohm resistor||
+||R2||	1K ohm resistor||
+||R3||	1K ohm resistor||
+||R4||	1K ohm resistor||
+||R5||	1K ohm resistor||
+||R6||	1K ohm resistor||
+||R7||	500 ohm resistor||
+||R8||	500 ohm resistor||
+||R9||	500 ohm resistor||
+||U1||	Atmel AVR ATMega48||
+||U2||	Sharp PC900 Optocoupler||
+||X1||	20MHz Crystal, 20pF Load Capacitance||
+
 == Step one: placing major components ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/1.png
