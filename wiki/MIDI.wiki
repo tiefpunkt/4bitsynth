@@ -1,4 +1,4 @@
-#summary 4bitsynth responds to the following MIDI CC messages.
+#summary 4bitsynth responds to MIDI CC Messages for its effects
 
 = MIDI CC Chart =
 
