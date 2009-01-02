@@ -4,5 +4,60 @@
 
 Add your content here.
 
+== Step one: placing major components ==
+
+http://4bitsynth.googlecode.com/svn/trunk/images/1.png
+
+First, we place our major components: the integrated chips. At the top is basically a set of four switches that will serve as a MIDI channel selector.
+
+Next is the brains of the synth: the microcontroller unit ("MCU"). In this case, it's an Atmel AVR ATMega48. If you are connecting multiple synths together, you should probably only need one of these.
+
+Next down is a Sharp PC-900 photocoupler. This isolates the MIDI signals from the cables from the the rest of the components, which may be sensitive to electrical surges. It sends logic voltages (0 or 5 volts) to the MCU.
+
+Finally, the MIDI-In connector. It might be a little tight getting into the breadboard, but it should fit. If you have a lot of trouble, you can get a separate connector that you can solder some thinner wires to.
+
+== Step two: connecting power ==
+
+http://4bitsynth.googlecode.com/svn/trunk/images/2.png
+
+Our ICs need power to operate. I like to use red wires for +5V and black wires for ground. Attach them as shown. Please double check the data sheets to be sure you are connecting power to the correct pins!
+
+The four black wires going from the switches to ground serve to bring pins low on the MCU, which to the MCU, is actually interpreted as binary 1. See the MIDI Channel Selection section for more information.
+
+The power lines on the optocoupler are not "power sources" per se, but they are part of a small transistor circuit. Transistors are beyond the scope of this manual. Just know that it basically transforms the MIDI input signal to output 5V (binary 1) and 0V (binary 0) to the MCU, which is exactly what it wants.
+
+== Step three: connecting I/O ==
+
+http://4bitsynth.googlecode.com/svn/trunk/images/3.png
+
+Now we connect the switch to the MCU (yellow lines). Each line corresponds to one bit of a four-bit binary number, which means that it can be 0 - 15, each corresponding to one of the possible 16 MIDI Channels.
+
+The blue line is the digital connection to the MCU's general purpose Universal Synchronous-Asynchronous Receiver/Transmitter (USART). It is essentially the MIDI message receiver. This line can be shared with other 4bit Synths directly.
+
+The green line is part of the raw MIDI signal (not a voltage signal) which will be transformed by the optocoupler's transistor circuit. 
+
+== Step four: placing minor components, MIDI ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/4.png
+
+Now add the two resistors (220 ohm and 280 ohm) to the MIDI-In part of the circuit. Also, make sure you insert the diode (1N914) the correct way. Check for the line marking. 
+
+== Step five: placing minor components, Microcontroller ==
+
+http://4bitsynth.googlecode.com/svn/trunk/images/5.png
+
+Now add the two 22pF ceramic capacitors and the 20MHz crystal. These will provide the clock source for the MCU. All of these are not polarized, so you can insert them either way, there is no "backwards" for these particular parts.
+
+Also, above is a 5.6k resistor which will keep the MCU's reset line (pin 1) at 5V -- this will keep the MCU out of reset mode. If you want to reset the MCU, just plug a wire into this strip, and connect it to ground for a second. Be careful not to connect this to the same strip as the blue line. 
+
+== Step six: adding a Digital-Analog Converter ==
+
+http://4bitsynth.googlecode.com/svn/trunk/images/6.png
+
+Now we add the Digital-Analog Converter (DAC) to the mix. This will let the 4-bit "audio level" expressed by the MCU and turn it into a corresponding voltage level -- the audio signal.
+
+You will probably want to plug this part into a second breadboard to the right of this one. 
+
+== Step seven: connection to audio out ==
+
+I use a couple of alligator clips for this. You can connect Audio + to both the Left and Right of a stereo signal to plug into a some speakers or your microphone/line in of your computer. Connect the Audio - to the audio cable's ground (sometimes a shielding). 
