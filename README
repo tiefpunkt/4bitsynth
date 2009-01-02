@@ -9,11 +9,22 @@ contact: magaio@gmail.com
 Building instructions and schematic are available at the wiki:
 http://code.google.com/p/4bitsynth/w/list
 
-== COMPILING ==
+
+
+
+
+
+====================================== COMPILING =========================================
 
 Each synth has its own makefile: Makefile.square, Makefile.triangle, Makefile.noise
 
-To make each one, enter the following at the commandline (example square shown)
+However, you can just build all of them at once by executing the buildall.sh script:
+
+./buildall.sh
+
+
+
+To make each one separately, enter the following at the commandline (example square shown)
 
 make -f Makefile.square hex
 
@@ -26,9 +37,15 @@ or
 make -f Makefile.triangle hex
 
 
-== UPLOADING / PROGRAMMING ==
 
-The makefile references AVRDUDE as the programming application. Alter the makefiles to change to which type of programmer you are using (stk500, usbtinyisp, or perhaps avrispmkii).
+
+
+
+
+====================================== PROGRAMMING =========================================
+
+The makefile references AVRDUDE as the programming application. 
+Alter the makefiles to change to which type of programmer you are using (stk500, usbtinyisp, or perhaps avrispmkii).
 
 The make command for uploading is:
 
