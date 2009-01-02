@@ -8,7 +8,7 @@ All demos are direct recordings with no special effects.
 ||3NGL Demo||	[ogg] [mp3]
 ||SQR Demo||	[ogg] [mp3]
 ||XOR Demo||	[ogg] [mp3]	
-||Takeoff||	[ogg] [mp3] ||[4bdemos/Takeoff.mid]
+||Takeoff||	[http://4bitsynth.googlecode.com/svn/trunk/4bdemos/Takeoff.ogg ogg] [http://4bitsynth.googlecode.com/svn/trunk/4bdemos/Takeoff.mp3 mp3] ||[4bdemos/Takeoff.mid]
 ||Test1||	[ogg] [mp3] ||[4bdemos/Test1.mid]
 ||Mega Man 3 Cover||	[ogg] [mp3] || 	4bdemos/Test2.mid
 ||Mega Man 3 Cover 2||	[ogg] [mp3] ||	4bdemos/mm3-2.mid
