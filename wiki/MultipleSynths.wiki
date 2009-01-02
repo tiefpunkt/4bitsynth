@@ -6,4 +6,9 @@ You only need one ground line (green line here), you can plug it into one of the
 
 Finally, you need to share the digital MIDI-in signal (pink line here). Since you can share these directly, you don't need to add the PC-900 optocoupler or the MIDI-in connector to every synth module. I have successfully shared the signal from just one optocoupler with 8 synths without any problems. If you wanted a "proper" MIDI setup, you'd have a MIDI thru portion for every synth module, and you'd need 8 little short MIDI cables going to and from each one. No thanks.
 
-Here is a picture of my setup with 7 synths (3 SQRs, 2 3NGLS, and 2 XORs): 
+Here is a picture of my setup with 7 synths (3 SQRs, 2 3NGLS, and 2 XORs):
+
+http://4bitsynth.googlecode.com/svn/trunk/images/multipleexample.png
+
+Here is a link to the high resolution image:
+[http://4bitsynth.googlecode.com/svn/trunk/images/multipleexample_large.png]
