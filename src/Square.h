@@ -1,10 +1,6 @@
-#define bit_get(p,m) ((p) & (m))
-#define bit_set(p,m) ((p) |= (m))
-#define bit_clear(p,m) ((p) &= ~(m))
-#define bit_flip(p,m) ((p) ^= (m))
-#define bit_write(c,p,m) (c ? bit_set(p,m) : bit_clear(p,m))
-#define BIT(x) (0x01 << (x))
-#define LONGBIT(x) ((unsigned long)0x00000001 << (x)) 
+//Maximum and minimum timer values for aesthetic purposes
+#define MAXIMUM_FREQ 9000
+#define MINIMUM_FREQ 0
 
 #define USART_BAUDRATE 31250 
 #define BAUD_PRESCALE 39 
@@ -100,9 +96,7 @@ void init_interrupts(void);
 void init_io(void); 
 void init_timers(void);
 
-#define MAXIMUM_FREQ 9000
-#define MINIMUM_FREQ 0
-
+//Timer values for musical notes
 //For Prescaler = 64
 const unsigned int note_table[128] = {
 19111,

@@ -1,13 +1,6 @@
-/*This is a modified version of the Square Synth
-square elements have been commented out, remove when completed */
-
-#define bit_get(p,m) ((p) & (m))
-#define bit_set(p,m) ((p) |= (m))
-#define bit_clear(p,m) ((p) &= ~(m))
-#define bit_flip(p,m) ((p) ^= (m))
-#define bit_write(c,p,m) (c ? bit_set(p,m) : bit_clear(p,m))
-#define BIT(x) (0x01 << (x))
-#define LONGBIT(x) ((unsigned long)0x00000001 << (x)) 
+//Maximum and minimum timer values for aesthetic purposes
+#define MAXIMUM_FREQ 19000
+#define MINIMUM_FREQ 60
 
 #define USART_BAUDRATE 31250 
 #define BAUD_PRESCALE 39 
@@ -17,11 +10,11 @@ square elements have been commented out, remove when completed */
 #define MIDI_STATUS_TYPE_CC 0xB0 
 #define MIDI_STATUS_TYPE_PB 0xE0 
 
-#define		MIDI_STATUS_NONE 0 
-#define		MIDI_STATUS_NOTEON 1 
-#define		MIDI_STATUS_NOTEOFF 2 
-#define		MIDI_STATUS_CC 3 
-#define		MIDI_STATUS_PB 4
+#define	MIDI_STATUS_NONE 0 
+#define	MIDI_STATUS_NOTEON 1 
+#define	MIDI_STATUS_NOTEOFF 2 
+#define	MIDI_STATUS_CC 3 
+#define	MIDI_STATUS_PB 4
 
 unsigned char midi_channel;
 unsigned char byte_received;
@@ -67,10 +60,6 @@ unsigned char amplitude;
 
 unsigned char master_volume;
 
-//unsigned char voldecay_enabled;
-//unsigned char voldecay_amount;
-//unsigned char voldecay_loop_enabled;
-
 unsigned char sweep_enabled;
 unsigned char sweep_direction;
 unsigned char sweep_amount;
@@ -101,142 +90,9 @@ void init_interrupts(void);
 void init_io(void); 
 void init_timers(void);
 
-#define MAXIMUM_FREQ 19000
-#define MINIMUM_FREQ 60
+//Timer values for musical notes
+//For Prescaler = 64
 
-//For Prescaler = 1
-/*
-const unsigned int note_table[128] = {
-19112,
-18039,
-17027,
-16071,
-15169,
-14318,
-13514,
-12756,
-12040,
-11364,
-10726,
-10124,
-9556,
-9020,
-8514,
-8036,
-7585,
-7159,
-6757,
-6378,
-6020,
-5682,
-5363,
-5062,
-4778,
-4510,
-4257,
-4018,
-3793,
-3580,
-3379,
-3189,
-3010,
-2841,
-2682,
-2531,
-2389,
-2255,
-2129,
-2009,
-1897,
-1790,
-1690,
-1595,
-1505,
-1421,
-1341,
-1266,
-1195,
-1128,
-1065,
-1005,
-949,
-895,
-845,
-798,
-753,
-711,
-671,
-633,
-598,
-564,
-533,
-503,
-475,
-448,
-423,
-399,
-377,
-356,
-336,
-317,
-299,
-282,
-267,
-252,
-238,
-224,
-212,
-200,
-189,
-178,
-168,
-159,
-150,
-141,
-134,
-126,
-119,
-112,
-106,
-100,
-95,
-89,
-84,
-80,
-75,
-71,
-67,
-63,
-60,
-56,
-53,
-50,
-48,
-45,
-42,
-40,
-38,
-36,
-34,
-32,
-30,
-28,
-27,
-25,
-24,
-23,
-21,
-20,
-19,
-18,
-17,
-16,
-15,
-14,
-14,
-13
-};
-*/
 const unsigned int note_table[128] = {
 38223,
 36078,

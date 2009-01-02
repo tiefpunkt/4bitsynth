@@ -1,11 +1,3 @@
-#define bit_get(p,m) ((p) & (m))
-#define bit_set(p,m) ((p) |= (m))
-#define bit_clear(p,m) ((p) &= ~(m))
-#define bit_flip(p,m) ((p) ^= (m))
-#define bit_write(c,p,m) (c ? bit_set(p,m) : bit_clear(p,m))
-#define BIT(x) (0x01 << (x))
-#define LONGBIT(x) ((unsigned long)0x00000001 << (x)) 
-
 #define USART_BAUDRATE 31250 
 #define BAUD_PRESCALE 39 
 
@@ -19,6 +11,10 @@
 #define    MIDI_STATUS_NOTEOFF 2 
 #define    MIDI_STATUS_CC 3 
 #define    MIDI_STATUS_PB 4
+
+//Maximum and minimum timer values for aesthetic purposes
+#define MAXIMUM_FREQ 10000
+#define MINIMUM_FREQ 25
 
 unsigned int shift_register;
 unsigned char clock_ready;	//Variable to store when timer overflow occurred, move clock function out of interrupt
@@ -102,9 +98,9 @@ void init_timers(void);
 
 void clock_shift_register(void);
 
-#define MAXIMUM_FREQ 10000
-#define MINIMUM_FREQ 25
 
+
+//Timer values for musical notes
 //For Prescaler = 64
 const unsigned int note_table[128] = {
 19111,
