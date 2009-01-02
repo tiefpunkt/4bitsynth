@@ -1,9 +1,4 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-4bitsynth responds to the following MIDI CC messages.
-
+#summary 4bitsynth responds to the following MIDI CC messages.
 
 = MIDI CC Chart =
 
