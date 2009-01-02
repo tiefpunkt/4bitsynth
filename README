@@ -1,0 +1,10 @@
+4bitsynth
+Copyright 2008 David M. Farler
+http://code.google.com/p/4bitsynth/
+
+contact: magaio@gmail.com
+
+4bitsynth is a MIDI-controlled digital synthesizer that uses the Atmel AVR ATMega48. The inspiration is from the NES. As such, the sound is 4-bit. The 4-bit digital output is put through an R-2R resistor ladder to get the analog waveform.
+
+Building instructions and schematic are available at the wiki:
+http://code.google.com/p/4bitsynth/w/list
