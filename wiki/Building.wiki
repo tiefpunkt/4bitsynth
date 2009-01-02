@@ -2,8 +2,11 @@
 
 = Introduction =
 
-Add your content here.
+Here are step-by-step instructions for building a 4bit synth, including the schematics and bill of materials.
 
+== Schematic ==
+
+http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
 == Step one: placing major components ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/1.png
@@ -60,4 +63,6 @@ You will probably want to plug this part into a second breadboard to the right o
 
 == Step seven: connection to audio out ==
 
-I use a couple of alligator clips for this. You can connect Audio + to both the Left and Right of a stereo signal to plug into a some speakers or your microphone/line in of your computer. Connect the Audio - to the audio cable's ground (sometimes a shielding). 
+http://4bitsynth.googlecode.com/svn/trunk/images/7.png
+
+I use a couple of alligator clips for this. You can connect Audio + to both the Left and Right of a stereo signal to plug into a some speakers or your microphone/line in of your computer. Connect the Audio - to the audio cable's ground (sometimes a shielding).
