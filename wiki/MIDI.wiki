@@ -12,11 +12,11 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
-CC||Name  ||	Comments
-1 ||	Duty cycle 	||CC 1 = Duty Cycle (SQR Synth only)
-0 - 48:|| 50% duty cycle
-49 - 95: ||25% duty cycle
-96 - 127: ||12.5% duty cycle
+CC||Name||Comments
+1 ||Duty cycle||CC 1 = Duty Cycle (SQR Synth only)
+0 - 48:|| 50% duty cycle||
+49 - 95: ||25% duty cycle||
+96 - 127: ||12.5% duty cycle||
 7 	||Master volume 	||Not used on 3NGL
 8 	||Fine pitch 	||Bends pitch down, 0 = no pitch change
 9 	||Volume decay enable 	||> 64 = on, Not used on 3NGL
