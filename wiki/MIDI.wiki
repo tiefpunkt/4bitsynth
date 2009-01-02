@@ -1,0 +1,29 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+CC||Name  ||	Comments
+1 ||	Duty cycle 	||CC 1 = Duty Cycle (SQR Synth only)
+0 - 48:|| 50% duty cycle
+49 - 95: ||25% duty cycle
+96 - 127: ||12.5% duty cycle
+7 	||Master volume 	||Not used on 3NGL
+8 	||Fine pitch 	||Bends pitch down, 0 = no pitch change
+9 	||Volume decay enable 	||> 64 = on, Not used on 3NGL
+10 	||Volume decay amount 	||Not used on 3NGL
+11 	||Volume decay loop enable 	||Greater than 64 = on
+Not used on 3NGL
+12 	||Sweep enable 	||Greater than 64 = on
+13 	||Sweep direction 	||Greater than 64 = up. Less than 64 = down
+14 	||Sweep amount ||	
+15 	||Sweep loop enable 	||Greater than 64 = on
