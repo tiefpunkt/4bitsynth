@@ -1,0 +1,8 @@
+#summary Step-by-step instructions for how to build a synth
+
+= Introduction =
+
+Add your content here.
+
+
+http://4bitsynth.googlecode.com/svn/trunk/images/4.png
