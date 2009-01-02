@@ -6,11 +6,11 @@
 #define MIDI_STATUS_TYPE_CC 0xB0 
 #define MIDI_STATUS_TYPE_PB 0xE0 
 
-#define 	MIDI_STATUS_NONE 0 
-#define		MIDI_STATUS_NOTEON 1 
-#define    MIDI_STATUS_NOTEOFF 2 
-#define    MIDI_STATUS_CC 3 
-#define    MIDI_STATUS_PB 4
+#define MIDI_STATUS_NONE 0 
+#define	MIDI_STATUS_NOTEON 1 
+#define MIDI_STATUS_NOTEOFF 2 
+#define MIDI_STATUS_CC 3 
+#define MIDI_STATUS_PB 4
 
 //Maximum and minimum timer values for aesthetic purposes
 #define MAXIMUM_FREQ 10000
@@ -97,8 +97,6 @@ void init_io(void);
 void init_timers(void);
 
 void clock_shift_register(void);
-
-
 
 //Timer values for musical notes
 //For Prescaler = 64
