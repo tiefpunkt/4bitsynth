@@ -24,7 +24,7 @@
 
 
 void init_interrupts(){
-	//Turn on reception and | RX Interrupt
+	//Turn on USART reception and | RX Interrupt
 	UCSR0B = (1 << RXEN0)|(1<<RXCIE0);
 
 	//8-bit, 1 stop, Asynch.
@@ -37,25 +37,14 @@ void init_interrupts(){
 	/* Enable USART Receive interrupt */
 	enable_USART_interrupts();
 
-	/* Enable falling edge interrupt on INT0 */
-	/* ISC00 = 0; ISC01 = 1; */
-	//EICRA = 0x02;
-
-	/* Turn on INT0 interrupt */
-	/* EIMSK = -----001 */
-	//EIMSK = 1;
-	//PCMSK3 = 0;
-
-	// Enable Timer Overflow Interrupt
-	//TIMSK1 = 1;
 }
 
 
 
 void init_io(){
-	DDRC = 0x0F;
-	DDRD &= 0b00001111;
-	PORTD |= 0b11110000;
+	DDRC = 0x0F;		//b0 - b3 of PORT C is output
+	DDRD &= 0b00001111;	//b4 0 v7 of PORT D is input (MIDI Channel selection)
+	PORTD |= 0b11110000;	//enable internal pull-up resistors for MIDI Channel selection bits
 }
 
 
@@ -65,7 +54,7 @@ void init_timers(){
 	TIMSK0 = 0b00000001;	//Enable Overflow interrupts for Timer 0
 	TCCR0A = 0b00000000;	//Normal counter operation
 	TCCR0B = 0b00000101;	//Divide by 1024 prescalar
-	TCNT0 = 0x00;			//Start terminal count at zero
+	TCNT0 = 0x00;		//Start terminal count at zero
 
 
 	//16-bit timer 1 for main frequency generation
@@ -74,7 +63,7 @@ void init_timers(){
 	TCCR1A = 0b00000001;
 	TCCR1B = 0b00010001;	// Prescaler 1, Fast PWM
 
-
+	//Start count at zero now
 	TCNT1H = 0;
 	TCNT1L = 0;
 }
@@ -157,12 +146,6 @@ ISR(TIMER1_COMPA_vect)
 		amplitude |= (strobe << 4);
 		PORTC = amplitude;
 	}
-}
-
-ISR(TIMER1_COMPB_vect)
-{
-
-
 }
 
 ISR(TIMER0_OVF_vect){
@@ -459,6 +442,5 @@ void clear_byte_received(){
 
 void check_channel_set(){
 	midi_channel = 0;
-	midi_channel |= (~PIND & 0xF0) >> 4;
-	PORTB = ~midi_channel;
+	midi_channel |= (~PIND & 0xF0) >> 4;
 }
