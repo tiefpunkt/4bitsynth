@@ -2,16 +2,10 @@
 
 = Introduction =
 
-Add your content here.
+4bitsynth responds to the following MIDI CC messages.
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
+= MIDI CC Chart =
 
 ||*CC*||*Name*||*Comments*||
 ||1||Duty cycle||Duty Cycle (SQR Synth only)||
