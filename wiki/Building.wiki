@@ -10,7 +10,7 @@ http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
 
 == Bill of materials ==
 
-||Component Reference  	||Description||
+||*Component Reference*  	||*Description*||
 ||C1||	22pF Ceramic Disc Capacitor||
 ||C2||	22pF Ceramic Disc Capacitor||
 ||C3||	MIDI Chan. Select DIP Switch (4x SPST)||
