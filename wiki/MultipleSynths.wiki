@@ -13,4 +13,4 @@ Here is a picture of my setup with 7 synths (3 SQRs, 2 3NGLS, and 2 XORs):
 http://4bitsynth.googlecode.com/svn/trunk/images/multipleexample.png
 
 Here is a link to the high resolution image:
-[http://4bitsynth.googlecode.com/svn/trunk/images/multipleexample_large.jpg High Resolution Multiple Synth Photo]
+[http://4bitsynth.googlecode.com/files/multipleexample_large.jpg High Resolution Multiple Synth Photo]
