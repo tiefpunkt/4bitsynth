@@ -1,16 +1,16 @@
 /*
  * This file is part of 4bitsynth.
- * 
+ *
  * 4bitsynth is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * 4bitsynth is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with 4bitsynth.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -18,8 +18,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-//#include <util/delay.h>
-#include "Noise.h"
+#include "noise.h"
 
 
 void init_interrupts(){
@@ -43,7 +42,7 @@ void init_interrupts(){
 void init_io(){
 	DDRC = 0x0F;		//b0 - b3 of PORT C is output
 	DDRD &= 00001111;	//b4 0 v7 of PORT D is input (MIDI Channel selection)
-	PORTD |= 0b11110000;	//enable internal pull-up resistors for MIDI Channel selection bits	
+	PORTD |= 0b11110000;	//enable internal pull-up resistors for MIDI Channel selection bits
 }
 
 
@@ -56,7 +55,7 @@ void init_timers(){
 
 	//16-bit timer 1 for main frequency generation
 	TIMSK1 = 0b00000010;	// Enable A compare interrupts
-	
+
 	TCCR1A = 0b00000001;
  	TCCR1B = 0b00010010;	// Prescaler 8, Fast PWM
 
@@ -130,7 +129,7 @@ ISR(TIMER1_COMPA_vect)
 
 ISR(TIMER0_OVF_vect)
 {
-	
+
 	/* Decay envelope */
 	if(voldecay_enabled == 1){
 		fake_8_timer ++; //Count a fake timer to artificially slow down real timer
@@ -178,7 +177,7 @@ ISR(TIMER0_OVF_vect)
 					}
 				}
 		}
-		
+
 			update_frequency(frequency);
 	}
 
@@ -233,7 +232,7 @@ void check_byte_received(){
 					//Is this a velocity byte?
 					if(num_bytes > 0)
 					{
-						
+
 						//If the velocity sent was 0, then this is really a NOTE-OFF
 						if(byte_received > 0){
 							current_midi_velocity = byte_received;
@@ -305,7 +304,7 @@ void check_byte_received(){
 						//First byte is 7 LSB
 						//Don't care about it for now
 						//current_midi_pb_l = byte_received;
-						
+
 						num_pbs ++;
 					break;
 					case(1):
@@ -418,7 +417,7 @@ void process_cc()
 			else
 				sweep_loop_enabled = 0;
 			break;
-	
+
 	}
 }
 
@@ -431,7 +430,7 @@ void update_frequency(unsigned int new_frequency)
 void bend_pitch()
 {
 		num_pbs = 0;
-	
+
 		if(current_midi_pb_h > 63){
 			distance = ((note_table[playing_midi_note]-note_table[playing_midi_note+2])*(current_midi_pb_h - 63))/64;
 			update_frequency(note_table[playing_midi_note] - distance);
