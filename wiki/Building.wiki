@@ -11,9 +11,9 @@ http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
 == Bill of materials ==
 
 ||Component Reference  	||Description||
-||C1||	22pF||
+||C1||	22pF Ceramic Disc Capacitor||
 ||C2||	22pF Ceramic Disc Capacitor||
-||C3||	MIDI Chan. Select DIP Switch||
+||C3||	MIDI Chan. Select DIP Switch (4x SPST)||
 ||C4||	2200uF Capacitor, optional but recommended to have one or two on the board to reduce noise||
 ||D1||	1N914 Diode||
 ||P1||	MIDI In Female Connector||
