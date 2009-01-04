@@ -1,11 +1,14 @@
+//USART Settings for 20MHz operation
 #define USART_BAUDRATE 31250
 #define BAUD_PRESCALE 39
 
+//MIDI Message types
 #define MIDI_STATUS_TYPE_NOTEON 0x90
 #define MIDI_STATUS_TYPE_NOTEOFF 0x80
 #define MIDI_STATUS_TYPE_CC 0xB0
 #define MIDI_STATUS_TYPE_PB 0xE0
 
+//Local MIDI status identifying constants
 #define MIDI_STATUS_NONE 0
 #define	MIDI_STATUS_NOTEON 1
 #define MIDI_STATUS_NOTEOFF 2
@@ -53,12 +56,12 @@ unsigned char num_ccs;
 unsigned char num_pbs;
 
 unsigned char noise_type;
-unsigned char tap_one; //Input 1 of xor operation
-unsigned char tap_two; //Input 2 of xor operation
-unsigned int frequency;
+unsigned char tap_one; 	//Input 1 of xor operation
+unsigned char tap_two; 	//Input 2 of xor operation
+unsigned int frequency;	//Timer1 countdown value
 unsigned char amplitude;
 
-unsigned char fake_8_timer; //to slow down decay/pitch
+unsigned char fake_8_timer; //to slow down decay/pitch timer further
 
 unsigned char master_volume;
 
@@ -71,6 +74,7 @@ unsigned char sweep_direction;
 unsigned char sweep_amount;
 unsigned char sweep_loop_enabled;
 
+//Pitch bend distance from current note's timer value
 unsigned int distance;
 
 unsigned char byte_ready;
