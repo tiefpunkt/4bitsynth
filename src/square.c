@@ -117,13 +117,11 @@ ISR(USART_RX_vect) {
 ISR(TIMER1_COMPA_vect)
 {
 	PORTC = amplitude;
-	//TCNT1 = 0;
-	//OCR1B = OCR1A * 2;
 }
 
 ISR(TIMER1_COMPB_vect)
 {
-	//Chops off square wave depending on length of Timer1 value
+	//Chops off square wave "prematurely" depending on length of Timer1 value
 	//See process_cc()
 	PORTC = 0;
 }
@@ -196,16 +194,16 @@ void check_byte_received() {
 					switch (status_type) {
 					case (MIDI_STATUS_TYPE_NOTEON):
 						current_midi_status = MIDI_STATUS_NOTEON;
-						break;
+					break;
 					case (MIDI_STATUS_TYPE_NOTEOFF):
 						current_midi_status = MIDI_STATUS_NOTEOFF;
-						break;
+					break;
 					case (MIDI_STATUS_TYPE_CC):
 						current_midi_status = MIDI_STATUS_CC;
-						break;
+					break;
 					case (MIDI_STATUS_TYPE_PB):
 						current_midi_status = MIDI_STATUS_PB;
-						break;
+					break;
 					default:
 						current_midi_status = MIDI_STATUS_NONE;
 					}
@@ -235,16 +233,16 @@ void check_byte_received() {
 						num_bytes = 0;
 					}
 
-					//Or is this a note data byte?
+				//Or is this a note data byte?
 					else {
 						current_midi_note = byte_received;
 						num_bytes++;
 					}
 
-					//Clear the byte so we don't process it twice
-					clear_byte_received();
+				//Clear the byte so we don't process it twice
+				clear_byte_received();
 
-					break;
+				break;
 
 				case (MIDI_STATUS_NOTEOFF):
 					//Is this a velocity byte?
@@ -263,10 +261,10 @@ void check_byte_received() {
 						num_bytes++;
 					}
 
-					//Clear the byte so we don't process it twice
-					clear_byte_received();
+				//Clear the byte so we don't process it twice
+				clear_byte_received();
 
-					break;
+				break;
 
 				case (MIDI_STATUS_CC):
 					//Did we already get a CC Status byte?
@@ -274,12 +272,12 @@ void check_byte_received() {
 						current_midi_ccdata = byte_received;
 						process_cc();
 					}
-					//Or is this a new CC status byte?
+				//Or is this a new CC status byte?
 					else {
 						current_midi_cc = byte_received;
 						num_ccs++;
 					}
-					break;
+				break;
 
 				case (MIDI_STATUS_PB):
 					//How many PB related bytes have we gotten?
@@ -290,17 +288,17 @@ void check_byte_received() {
 						//current_midi_pb_l = byte_received;
 
 						num_pbs++;
-						break;
+					break;
 					case (1):
 						//Second byte has 7 MSB
 						current_midi_pb_h = byte_received;
-						//Combine to get 14 bytes 0 - 13
-						//current_midi_pb = ((current_midi_pb_h << 7)|(current_midi_pb_l << 0));
-						bend_pitch();
+					//Combine to get 14 bytes 0 - 13
+					//current_midi_pb = ((current_midi_pb_h << 7)|(current_midi_pb_l << 0));
+					bend_pitch();
 
-						break;
-					}
 					break;
+					}
+				break;
 				}
 			}
 
@@ -321,12 +319,19 @@ void note_on() {
 	num_bytes = 0;
 	TCNT1 = 0;
 
+	//Set timer count corresponding to midi note and thus musical note
 	frequency = note_table[playing_midi_note];
-	update_frequency(note_table[playing_midi_note]);
+	update_frequency(frequency);
 	update_duty_cycle();
+
+	//Amplitude max = 128/8 = 16, within 4-bit limit
 	amplitude = current_midi_velocity / 8;
+
+	//Don't let the user hear a "silent" note
 	if (amplitude == 0)
-		amplitude = 1; //Don't let the user hear a "silent" note
+		amplitude = 1;
+
+	//Limit amplitude per master volume
 	if (amplitude > master_volume)
 		amplitude = master_volume;
 }
@@ -351,7 +356,7 @@ void process_cc() {
 		break;
 	case FINE_PITCH_CC:
 		fine_pitch_bend = ((note_table[playing_midi_note - 1]
-				- note_table[playing_midi_note]) * current_midi_ccdata) / 192;
+		                               - note_table[playing_midi_note]) * current_midi_ccdata) / 192;
 		update_frequency(note_table[playing_midi_note]);
 		break;
 	case VOLDECAY_ENABLED_CC:
@@ -394,11 +399,17 @@ void process_cc() {
 
 void update_duty_cycle() {
 	if (duty_cycle > 48 && duty_cycle < 96)
-		OCR1B = OCR1A / 4; //12.5% Duty Cycle
+		//12.5% Duty Cycle
+		//Second timer chops off quart of 50% = 12.5%
+		OCR1B = OCR1A / 4;
 	else if (duty_cycle > 96)
-		OCR1B = OCR1A / 2; //25% Duty Cycle
+		//25% Duty Cycle
+		//Second timer chops off half of 50% = 25%
+		OCR1B = OCR1A / 2;
 	else
-		OCR1B = 0; //50% Duty Cycle
+		//50% Duty Cycle
+		//Second timer interrupt doesn't chop off waveform
+		OCR1B = 0;
 }
 
 void update_frequency(unsigned int new_frequency) {
@@ -410,14 +421,14 @@ void bend_pitch() {
 
 	if (current_midi_pb_h > 63) {
 		distance
-				= ((note_table[playing_midi_note]
-						- note_table[playing_midi_note + 2])
-						* (current_midi_pb_h - 63)) / 64;
+		= ((note_table[playing_midi_note]
+		               - note_table[playing_midi_note + 2])
+		               * (current_midi_pb_h - 63)) / 64;
 		update_frequency(note_table[playing_midi_note] - distance);
 	} else if ((current_midi_pb_h < 63) && (playing_midi_note > 1)) {
 		distance = ((note_table[playing_midi_note - 2]
-				- note_table[playing_midi_note]) * (64 - current_midi_pb_h))
-				/ 64;
+		                        - note_table[playing_midi_note]) * (64 - current_midi_pb_h))
+		                        / 64;
 		update_frequency(note_table[playing_midi_note] + distance);
 	}
 
@@ -429,6 +440,7 @@ void clear_byte_received() {
 
 void check_channel_set() {
 	midi_channel = 0;
+	//Get 4-bit (0-16) MIDI CHannel from PORTD b4-b7)
 	midi_channel |= (~PIND & 0xF0) >> 4;
 
 }

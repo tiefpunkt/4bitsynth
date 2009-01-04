@@ -90,7 +90,7 @@ void init_io(void);
 void init_timers(void);
 
 //Timer values for musical notes
-//For Prescaler = 64
+//For Prescaler = 1024
 
 const unsigned int note_table[128] = { 38223, 36078, 34053, 32142, 30338,
 		28635, 27028, 25511, 24079, 22728, 21452, 20248, 19112, 18039, 17027,

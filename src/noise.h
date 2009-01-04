@@ -98,7 +98,7 @@ void init_timers(void);
 void clock_shift_register(void);
 
 //Timer values for musical notes
-//For Prescaler = 64
+//For Prescaler = 1024
 const unsigned int note_table[128] = { 19111, 18039, 17026, 16071, 15169,
 		14317, 13514, 12755, 12039, 11364, 10726, 10124, 9556, 9019, 8513,
 		8035, 7584, 7159, 6757, 6378, 6020, 5682, 5363, 5062, 4778, 4510, 4257,
