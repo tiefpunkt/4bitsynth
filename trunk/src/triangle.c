@@ -36,25 +36,38 @@ void init_interrupts() {
 }
 
 void init_io() {
-	DDRC = 0x0F; //b0 - b3 of PORT C is output
-	DDRD &= 0b00001111; //b4 0 v7 of PORT D is input (MIDI Channel selection)
-	PORTD |= 0b11110000; //enable internal pull-up resistors for MIDI Channel selection bits
+	//b0 - b3 of PORT C is output
+	DDRC = 0x0F;
+
+	//b4 0 v7 of PORT D is input (MIDI Channel selection)
+	DDRD &= 0b00001111;
+
+	//enable internal pull-up resistors for MIDI Channel selection bits
+	PORTD |= 0b11110000;
 }
 
 void init_timers() {
 
 	//8-bit timer 0 for decay, sweep, vibrato effects?
-	TIMSK0 = 0b00000001; //Enable Overflow interrupts for Timer 0
-	TCCR0A = 0b00000000; //Normal counter operation
-	TCCR0B = 0b00000101; //Divide by 1024 prescalar
-	TCNT0 = 0x00; //Start terminal count at zero
+	//Enable Overflow interrupts for Timer 0
+	TIMSK0 = 0b00000001;
 
+	//Normal counter operation
+	TCCR0A = 0b00000000;
+
+	//Divide by 1024 prescalar
+	TCCR0B = 0b00000101;
+
+	//Start terminal count at zero
+	TCNT0 = 0x00;
 
 	//16-bit timer 1 for main frequency generation
 	TIMSK1 = 0b00000010; // Enable A and B compare interrupts
 
 	TCCR1A = 0b00000001;
-	TCCR1B = 0b00010001; // Prescaler 1, Fast PWM
+
+	// Prescaler 1, Fast PWM
+	TCCR1B = 0b00010001;
 
 	//Start count at zero now
 	TCNT1H = 0;
@@ -328,8 +341,9 @@ void disable_USART_interrupts() {
 
 void note_on() {
 	num_bytes = 0;
+	//Reset main timer1
 	TCNT1 = 0;
-
+	//Set timer count corresponding to midi note and thus musical note
 	frequency = note_table[current_midi_note];
 	update_frequency(frequency);
 	note_on_gate = 1;
@@ -410,6 +424,7 @@ void clear_byte_received() {
 
 void check_channel_set() {
 	midi_channel = 0;
+	//Get 4-bit (0-16) MIDI CHannel from PORTD b4-b7)
 	midi_channel |= (~PIND & 0xF0) >> 4;
 
 }
