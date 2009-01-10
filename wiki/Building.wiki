@@ -11,7 +11,7 @@ http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
 == Bill of materials ==
 
 === Mouser ===
-To add a synth quickly to your mouser.com order, paste the following into the [http://www.mouser.com/BOM/BOM.aspx Bill of Materials (BOM) Import page] to add them to your cart.
+To add a synth quickly to your mouser.com order, paste the following into the [http://www.mouser.com/BOM/BOM.aspx Bill of Materials (BOM) Import page] to add them to your cart. Click "Import BOM" after you paste. You can do this as many times as you want synths. If you find any mistakes in the below list or the component reference below that, _please_ contact me.
 
 140-50N2-220J-RC|2
 
@@ -36,9 +36,6 @@ To add a synth quickly to your mouser.com order, paste the following into the [h
 852-PC900V0NSZXF|1
 
 520-HCU2000-20X|1
-
-
-If you find any mistakes in the above list or the component reference below, please contact me.
 
 === Component Reference Table ===
 
