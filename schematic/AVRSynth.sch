@@ -7,10 +7,10 @@ Sheet 1 1
 Title "AVR Synth"
 Date "29 dec 2008"
 Rev "1"
-Comp "Cirqt Electronics"
+Comp ""
 Comment1 "Copyright 2008 David M. Farler"
-Comment2 "http://www.cirqt.com"
-Comment3 ""
+Comment2 "http://4bitsynth.google.com"
+Comment3 "magaio@gmail.com"
 Comment4 ""
 $EndDescr
 Connection ~ 3600 5100
