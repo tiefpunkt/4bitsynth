@@ -10,6 +10,26 @@ http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
 
 == Bill of materials ==
 
+=== Mouser ===
+To add a synth quickly to your mouser.com order, paste the following into the [http://www.mouser.com/BOM/BOM.aspx Bill of Materials (BOM) Import page] to add them to your cart.
+
+140-50N2-220J-RC|2
+774-2084|1
+140-XRL25V2200-RC|1
+78-1N914|1
+806-KCDX-5S-N|1
+291-5.6K-RC|1
+291-220-RC|1
+291-1K-RC|5
+291-510-RC|3
+556-ATMEGA48-20PU|1
+852-PC900V0NSZXF|1
+520-HCU2000-20X|1
+
+If you find any mistakes in the above list or the component reference below, please contact me.
+
+=== Component Reference Table ===
+
 ||*Component Reference*||*Description*||*[http://www.mouser.com Mouser] part no.*||
 ||C1||	22pF Ceramic Disc Capacitor||140-50N2-220J-RC||
 ||C2||	22pF Ceramic Disc Capacitor||140-50N2-220J-RC||
