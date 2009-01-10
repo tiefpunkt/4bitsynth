@@ -10,30 +10,30 @@ http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
 
 == Bill of materials ==
 
-||*Component Reference*||*Description*||
-||C1||	22pF Ceramic Disc Capacitor||
-||C2||	22pF Ceramic Disc Capacitor||
-||C3||	MIDI Chan. Select DIP Switch (4x SPST)||
-||C4||	2200uF Capacitor, optional but recommended to have one or two on the board to reduce noise||
-||D1||	1N914 Diode||
-||P1||	MIDI In Female Connector||
-||P2||	Audio Out||
-||P3||	Power (5V)||
-||P4||	Audio In||
-||P5||	MIDI IN Alt. (for sharing one MIDI line)||
-||R1||	5.6k ohm resistor||
-||R10||	220 ohm resistor||
-||R2||	1K ohm resistor||
-||R3||	1K ohm resistor||
-||R4||	1K ohm resistor||
-||R5||	1K ohm resistor||
-||R6||	1K ohm resistor||
-||R7||	500 ohm resistor||
-||R8||	500 ohm resistor||
-||R9||	500 ohm resistor||
-||U1||	Atmel AVR ATMega48||
-||U2||	Sharp PC900 Optocoupler||
-||X1||	20MHz Crystal, 20pF Load Capacitance||
+||*Component Reference*||*Description*||*[http://www.mouser.com Mouser] part no.*||
+||C1||	22pF Ceramic Disc Capacitor||140-50N2-220J-RC||
+||C2||	22pF Ceramic Disc Capacitor||140-50N2-220J-RC||
+||C3||	MIDI Chan. Select DIP Switch (4x SPST)||774-2084||
+||C4||	2200uF Capacitor, optional but recommended to have one or two on the board to reduce noise||140-XRL25V2200-RC||
+||D1||	1N914 Diode||78-1N914||
+||P1||	MIDI In Female Connector||806-KCDX-5S-N||
+||P2||	Audio Out||N/A||
+||P3||	Power (5V)||N/A||
+||P4||	Audio In||N/A||
+||P5||	MIDI IN Alt. (for sharing one MIDI line)||N/A||
+||R1||	5.6k ohm resistor||291-5.6K-RC||
+||R10||	220 ohm resistor||291-220-RC||
+||R2||	1K ohm resistor||291-1K-RC||
+||R3||	1K ohm resistor||291-1K-RC||
+||R4||	1K ohm resistor||291-1K-RC||
+||R5||	1K ohm resistor||291-1K-RC||
+||R6||	1K ohm resistor||291-1K-RC||
+||R7||	500 ohm resistor||291-510-RC||
+||R8||	500 ohm resistor||291-510-RC||
+||R9||	500 ohm resistor||291-510-RC||
+||U1||	Atmel AVR ATMega48||556-ATMEGA48-20PU||
+||U2||	Sharp PC900 Optocoupler||852-PC900V0NSZXF||
+||X1||	20MHz Crystal, 20pF Load Capacitance||520-HCU2000-20X||
 
 == Step one: placing major components ==
 
