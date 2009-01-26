@@ -70,11 +70,11 @@ http://4bitsynth.googlecode.com/svn/trunk/images/1.png
 
 First, we place our major components: the integrated chips. At the top is basically a set of four switches that will serve as a MIDI channel selector.
 
-Next is the brains of the synth: the microcontroller unit ("MCU"). In this case, it's an Atmel AVR ATMega48. If you are connecting multiple synths together, you should probably only need one of these.
+Next is the brains of the synth: the microcontroller unit ("MCU"). In this case, it's an Atmel AVR ATMega48. You'll need one of these per synth.
 
-Next down is a Sharp PC-900 photocoupler. This isolates the MIDI signals from the cables from the the rest of the components, which may be sensitive to electrical surges. It sends logic voltages (0 or 5 volts) to the MCU.
+Next down is a Sharp PC-900 photocoupler. This isolates the MIDI signals from the cables from the the rest of the components, which may be sensitive to electrical surges. It sends logic voltages (0 or 5 volts) to the MCU. If you are connecting multiple synths together, you should probably only need one of these.
 
-Finally, the MIDI-In connector. It might be a little tight getting into the breadboard, but it should fit. If you have a lot of trouble, you can get a separate connector that you can solder some thinner wires to.
+Finally, the MIDI-In connector. It might be a little tight getting into the breadboard, but it should fit. If you have a lot of trouble, you can get a separate connector that you can solder some thinner wires to. With multiple synths, you probably only need one of these too.
 
 == Step two: connecting power ==
 
