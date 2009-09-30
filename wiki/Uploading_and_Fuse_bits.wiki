@@ -1,16 +1,14 @@
 #summary You need to set fuse bits to allow an external crystal oscillator.
 
-= Introduction =
+= Why set these magical fuse bytes? =
 
 Before your programmer can talk to your AVR microcontroller, you probably need to set the AVR Fuse bits (basic settings of how the MCU operates) so it will look for an external  crystal oscillator. The program expects to be running at 20 Mhz.
 
 
-= Details =
-
-Fuse bits:
+= Fuse byte values =
 
 *High byte* = 0xDF
 
 *Low byte* = 0xFF
 
-Extended fuse (optional -- probably already set) = 0x01
+Extended fuse byte (optional -- probably already set, check manual) = 0x01
