@@ -8,7 +8,7 @@ Here are step-by-step instructions for building a 4bit synth, including the sche
 * how a breadboard works
 * already have software installed on the microcontroller unit (MCU)
 
-You can find numerous articles on the above. For installing software onto the MCU, I recommend the [http://www.bsdhome.com/avrdude/ AVRDude] software package and LadyAda's [http://www.ladyada.net/make/usbtinyisp/ USBTiny In-System Programmer].
+You can find numerous articles on the above. For installing software onto the MCU, I recommend the [http://www.bsdhome.com/avrdude/ AVRDude] software package and LadyAda's [http://www.ladyada.net/make/usbtinyisp/ USBTiny] In-System Programmer.
 
 == Schematic ==
 
@@ -16,7 +16,7 @@ http://4bitsynth.googlecode.com/svn/trunk/schematic/4bitschematic.pdf
 
 == Bill of materials ==
 
-=== Mouser ===
+=== Mouser.com ===
 To add a synth quickly to your mouser.com order, paste the following into the [http://www.mouser.com/BOM/BOM.aspx Bill of Materials (BOM) Import page] to add them to your cart. Click "Import BOM" after you paste. You can do this as many times as you want synths. If you find any mistakes in the below list or the component reference below that, _please_ contact me.
 
 140-50N2-220J-RC|2
@@ -87,6 +87,8 @@ Finally, the MIDI-In connector. It might be a little tight getting into the brea
 http://4bitsynth.googlecode.com/svn/trunk/images/2.png
 
 Our ICs need power to operate. I like to use red wires for +5V and black wires for ground. Attach them as shown. Please double check the data sheets to be sure you are connecting power to the correct pins!
+
+Connect your +5V power supply to the red vertical strips on each side, and the Ground (-) to the blue/black strips on each side. You only need to connect the power to one of the squares on each of those columns -- they are connected all the way down, unlike the other strips.
 
 The four black wires going from the switches to ground serve to bring pins low on the MCU, which to the MCU, is actually interpreted as binary 1. See the MIDI Channel Selection section for more information.
 
