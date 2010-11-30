@@ -2,7 +2,13 @@
 
 = Introduction =
 
-Here are step-by-step instructions for building a 4bit synth, including the schematics and bill of materials.
+Here are step-by-step instructions for building a 4bit synth, including the schematics and bill of materials. These instructions assume you know the following:
+
+* basic electronics terms
+* how a breadboard works
+* already have software installed on the microcontroller unit (MCU)
+
+You can find numerous articles on the above. For installing software onto the MCU, I recommend the [http://www.bsdhome.com/avrdude/ AVRDude] software package and LadyAda's [http://www.ladyada.net/make/usbtinyisp/ USBTiny In-System Programmer].
 
 == Schematic ==
 
