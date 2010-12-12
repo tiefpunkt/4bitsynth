@@ -119,6 +119,7 @@ The green line is part of the raw MIDI signal (not a voltage signal) which will 
 == Step four: placing minor components, MIDI ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/4.png
+
 http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/minorcompsmidi.jpg
 
 
