@@ -73,6 +73,7 @@ To add a synth quickly to your mouser.com order, paste the following into the [h
 == Step one: placing major components ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/1.png
+
 http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/majorcomps.jpg
 
 
@@ -89,6 +90,9 @@ Finally, the MIDI-In connector. It might be a little tight getting into the brea
 
 http://4bitsynth.googlecode.com/svn/trunk/images/2.png
 
+http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/power.jpg
+
+
 Our ICs need power to operate. I like to use red wires for +5V and black wires for ground. Attach them as shown. Please double check the data sheets to be sure you are connecting power to the correct pins!
 
 Connect your +5V power supply to the red vertical strips on each side, and the Ground (-) to the blue/black strips on each side. You only need to connect the power to one of the squares on each of those columns -- they are connected all the way down, unlike the other strips.
@@ -97,11 +101,11 @@ The four black wires going from the switches to ground serve to bring pins low o
 
 The power lines on the optocoupler are not "power sources" per se, but they are part of a small transistor circuit. Transistors are beyond the scope of this manual. Just know that it basically transforms the MIDI input signal to output 5V (binary 1) and 0V (binary 0) to the MCU, which is exactly what it wants.
 
-http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/power.jpg
 
 == Step three: connecting I/O ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/3.png
+
 http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/io.jpg
 
 
@@ -124,6 +128,7 @@ Now add the two resistors (220 ohm and 280 ohm) to the MIDI-In part of the circu
 == Step five: placing minor components, Microcontroller ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/5.png
+
 http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/minorcompsmcu.jpg
 
 
@@ -135,6 +140,7 @@ Also, above is a 5.6k resistor which will keep the MCU's reset line (pin 1) at 5
 == Step six: adding a Digital-Analog Converter ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/6.png
+
 http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/dac.jpg
 
 
