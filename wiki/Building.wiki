@@ -82,6 +82,8 @@ Next down is a Sharp PC-900 photocoupler. This isolates the MIDI signals from th
 
 Finally, the MIDI-In connector. It might be a little tight getting into the breadboard, but it should fit. If you have a lot of trouble, you can get a separate connector that you can solder some thinner wires to. With multiple synths, you probably only need one of these too.
 
+http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/majorcomps.jpg
+
 == Step two: connecting power ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/2.png
@@ -94,6 +96,8 @@ The four black wires going from the switches to ground serve to bring pins low o
 
 The power lines on the optocoupler are not "power sources" per se, but they are part of a small transistor circuit. Transistors are beyond the scope of this manual. Just know that it basically transforms the MIDI input signal to output 5V (binary 1) and 0V (binary 0) to the MCU, which is exactly what it wants.
 
+http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/power.jpg
+
 == Step three: connecting I/O ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/3.png
@@ -104,11 +108,15 @@ The blue line is the digital connection to the MCU's general purpose Universal S
 
 The green line is part of the raw MIDI signal (not a voltage signal) which will be transformed by the optocoupler's transistor circuit. 
 
+http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/io.jpg
+
 == Step four: placing minor components, MIDI ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/4.png
 
 Now add the two resistors (220 ohm and 280 ohm) to the MIDI-In part of the circuit. Also, make sure you insert the diode (1N914) the correct way. Check for the line marking. 
+
+http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/minorcompsmidi.jpg
 
 == Step five: placing minor components, Microcontroller ==
 
@@ -118,6 +126,8 @@ Now add the two 22pF ceramic capacitors and the 20MHz crystal. These will provid
 
 Also, above is a 5.6k resistor which will keep the MCU's reset line (pin 1) at 5V -- this will keep the MCU out of reset mode. If you want to reset the MCU, just plug a wire into this strip, and connect it to ground for a second. Be careful not to connect this to the same strip as the blue line. 
 
+http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/minorcompsmcu.jpg
+
 == Step six: adding a Digital-Analog Converter ==
 
 http://4bitsynth.googlecode.com/svn/trunk/images/6.png
@@ -125,6 +135,8 @@ http://4bitsynth.googlecode.com/svn/trunk/images/6.png
 Now we add the Digital-Analog Converter (DAC) to the mix. This will let the 4-bit "audio level" expressed by the MCU and turn it into a corresponding voltage level -- the audio signal.
 
 You will probably want to plug this part into a second breadboard to the right of this one. 
+
+http://4bitsynth.googlecode.com/svn/trunk/images/realbuildphotos/dac.jpg
 
 == Step seven: connection to audio out ==
 
