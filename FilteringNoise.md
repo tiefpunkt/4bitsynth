@@ -1,0 +1,3 @@
+The MIDI information coming into the microcontrollers may cause some noise on the audio. An easy fix: put a big honking capacitor across the power lines. Take the included 2200uF capacitor -- place the (-) lead (the short one) and place that into GROUND. Take the long lead (+) and place that into the 5V+. "Fool! Won't this cause a short circuit?!" you ask? No, it won't. Capacitors are OPEN to DC; there is no direct connection. It will "hear" AC noise on the line and absorb it before it affects the audio. If that's still not enough for you, you can put a second one in somewhere else on the board.
+
+NEVER short a capacitor across its leads with a wire or tool. It might cause a surge that could damage it permanently.
